@@ -47,6 +47,30 @@ echo "my name is {$name}<br>";
 
 //変数の後に半角スペースがあると文字列の中の変数展開ができるでもわかりにくいのでやらないほうがいい
 echo "my name is $name <br>"; 
+
+// ヒアドキュメント
+// 複数行をまとめて文字列として書けるこの文字列は変数展開される
+
+echo <<<LABEL
+hi
+hi
+are
+you
+okay？
+${name}
+LABEL;
+
+// Nowdoc
+// IDの部分をシングルクォートで囲むとNowdocというのになる。変数展開されない
+<<<'ID'
+hey!
+hey!
+are
+you
+okay?
+${name}
+ID
+
 ?>
 
 </body>
