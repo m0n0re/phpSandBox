@@ -37,13 +37,16 @@ echo 'hello! \n php!'; // ->hello! \n php!
 echo "hello! \n php"; // -> hello! php!
 
 // web上で改行したいときはBRタグにしないとダメ
-echo 'hello! <br> php!'
+echo 'hello! <br> php!<br>';
 
 // https://www.javadrive.jp/php/string/index5.html
 // 文字列の中で変数展開する
 
+$name = "takahashi";
+echo "my name is {$name}<br>";
 
-
+//変数の後に半角スペースがあると文字列の中の変数展開ができるでもわかりにくいのでやらないほうがいい
+echo "my name is $name <br>"; 
 ?>
 
 </body>
