@@ -62,14 +62,93 @@ LABEL;
 
 // Nowdoc
 // IDの部分をシングルクォートで囲むとNowdocというのになる。変数展開されない
-<<<'ID'
+echo <<<'ID'
 hey!
 hey!
 are
 you
 okay?
 ${name}
-ID
+ID;
+
+
+// 変数
+// 変数の宣言
+$test="test";
+$_pref_name;
+$year2023;
+
+// 代入
+$old = 20;
+$name = "katoh"."ohoho"."<br/>";
+
+echo "${name}";
+
+// nullについて
+// nullは 大文字小文字を区別しない null で定義されている
+// null も NULLも同じ 
+$hoge; // ->null
+$hoge = NULL;
+
+// 変数の型
+// phpは変数になんでも格納することができる
+$name = 'tanaka';
+$old = 30;
+
+// 文字列変数に数値をいれるのもできる
+$var = 'yamada';
+$var = 1;
+
+$var = '高橋';
+print '[値]'.$var.',';
+print '[型]'.gettype($var).'<br />';
+
+$var = 180;
+print '[値]'.$var.',';
+print '[型]'.gettype($var).'<br />';
+//gettype(...)で変数の型が取れる
+
+$num1 = 320;
+$num2 = $num1;
+
+echo "num1:"."${num1}"."<br/>";
+echo "num2:"."${num2}"."<br/>";
+
+// num2にセットしてもnum1は変化しない
+// num1とnum2は同じメモリを指すわけではなくそれぞれで保持している
+$num2 = 1000;
+
+echo "num1:"."${num1}"."<br/>";
+echo "num2:"."${num2}"."<br/>";
+
+// 代入に =& を使うと格納メモリ(？)が同じになる
+// num3の値をnum4二セットしてnum3の値をかえるとnum4も変わる
+$num3 = 100;
+$num4 =& $num3;
+
+echo "num3:"."${num3}"."<br/>";
+echo "num4:"."${num4}"."<br/>";
+
+$num4 = 110;
+
+echo "num3:"."${num3}"."<br/>";
+echo "num4:"."${num4}"."<br/>";
+
+// 代入演算子
+// よくあるやつ
+// 変数 += 式
+// 変数 -= 式
+// 変数 *= 式
+// 変数 /= 式
+// 変数 %= 式
+
+// 文字連結のやつもある
+$str = 'yamada';
+$str .= '-san';
+echo "str:"."${str}"."<br/>"; // yamada-san
+
+
+
 
 ?>
 
