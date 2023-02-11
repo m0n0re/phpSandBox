@@ -162,8 +162,8 @@ $price2 = 1 * (1+TAX);
 
 // 数値と文字列を加算したり減算したりするとどうなるのか
 echo "5 + 2.4 = ", 5 + 2.4, '<br />';           // 7.4
-echo "5 + '8year' = ", 5 + '8year', '<br />';   // 13 (5と8yearの8の和) まじか
-echo "5 + '東京' = ", 5 + '東京';               // 5 (東京には数値がないので計算されない)
+//echo "5 + '8year' = ", 5 + '8year', '<br />';   // 13 (5と8yearの8の和) まじか → warningになる
+//echo "5 + '東京' = ", 5 + '東京';               // 5 (東京には数値がないので計算されない) → warningになる
 
 
 // if文
@@ -220,7 +220,7 @@ if(true){
 }
 
 // switch
-$$variable = '神奈川';
+$variable = '神奈川';
 
 switch ($variable) {
     case 'value':
@@ -231,6 +231,34 @@ switch ($variable) {
         # code...
         break;
 }
+
+// 三項演算子
+// 条件式 ? 式1:式2
+
+$lang = 'en';
+
+$msg = $lang == 'Jp'?'こんにちは':'Hello';
+print $msg;
+
+
+// 繰り返し処理
+// while (条件){
+//  処理1;
+//  処理2;
+// }
+
+// while(true){
+
+//     while(true){
+//         break;      // breakで子whileを抜けるて後ろの処理へ
+//         continue;   // continueで抜けて後ろの処理はせず頭に戻る
+//         while(true){
+//             continue 2; // while 2個分まで戻る
+//             break 2;    // breakで2個分まで抜ける
+//         } // break1
+//     } // break2
+//     break;  // breakで親whileを抜ける
+// }
 
 
 
