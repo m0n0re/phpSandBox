@@ -166,6 +166,73 @@ echo "5 + '8year' = ", 5 + '8year', '<br />';   // 13 (5と8yearの8の和) ま�
 echo "5 + '東京' = ", 5 + '東京';               // 5 (東京には数値がないので計算されない)
 
 
+// if文
+$old = 30;
+
+if($old >= 20){
+    print '20才以上';
+}
+
+// 論理型 true or false で指定 大文字小文字は区別しない
+$bool = true;
+$bool = false;
+
+// 以下のものはすべてFALSEになる
+
+// FALSE
+// 整数の0と浮動小数点数の0.0
+// 空文字""
+// 文字列の"0"
+// 要素の数が0の配列
+// NULL
+// メンバ変数の数がゼロであるオブジェクト
+
+// ↑以外はすべて  true になる
+
+
+// 比較演算子
+// 大体はjava,c#と同じ、ただし↓がある
+// === 型と値が一致していれば真
+// !== 型と値が一致していなければ偽
+
+// 論理演算子
+// && and 
+// || or
+// xor
+// !...
+
+// if - else // javaと一緒
+
+if(true){
+
+}else{
+
+}
+
+// if -elseif 
+
+if(true){
+
+}elseif(true){
+
+}else{
+
+}
+
+// switch
+$$variable = '神奈川';
+
+switch ($variable) {
+    case 'value':
+        # code...
+        break;
+    
+    default:
+        # code...
+        break;
+}
+
+
 
 
 
