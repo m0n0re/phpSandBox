@@ -364,6 +364,38 @@ $pc = array($maker, $type);
 print $pc[0][1];    // NEC と出力
 print $pc[1][0];    // Note と出力
 
+
+// function 関数名(引数1, 引数2, ...){
+//   実行される処理1;
+//   実行される処理2;
+//   return xxx;
+// }
+
+function check($kamoku, $tensuu){
+    print $kamoku.'の結果';
+    if($tensuu >75){
+        print "合格";
+    }else{
+        print "不合格";
+    }
+}
+
+$sugaku = 80;
+$eigo = 62;
+$kokugo = 78;
+
+check("数学",$sugaku);
+check("英語",$eigo);
+check("国語",$kokugo);
+
+// 定義前に読んでもOK
+hello();
+
+function hello(){
+  print 'hello';
+}
+
+
 ?>
 
 </body>
