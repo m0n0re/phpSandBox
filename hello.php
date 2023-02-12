@@ -248,7 +248,6 @@ print $msg;
 // }
 
 // while(true){
-
 //     while(true){
 //         break;      // breakで子whileを抜けるて後ろの処理へ
 //         continue;   // continueで抜けて後ろの処理はせず頭に戻る
@@ -260,9 +259,101 @@ print $msg;
 //     break;  // breakで親whileを抜ける
 // }
 
+// do while
+// do{
+//     //実行処理
+//     //...
+// }while(true);
 
+// for1
+// javaと一緒！
 
+for($i=0; $i<=10; $i++){
+    // 実行
+}
 
+// for2
+// 変数をn個しこめる。まじか。
+
+for($i=0,$j=0;$i<10;$i++,$j++){
+}
+
+// foreach
+$preflist = array('tokyo','osaka','nagoya');
+foreach ($preflist as $pref) {
+    print $pref.'<br/>';
+}
+
+$preflist = array('tokyo'=> '東京' ,'osaka'=>'大阪');
+
+foreach ($preflist as $key => $value) {
+    print $key.'=>'.$value.'<br/>';
+}
+
+// foreachで配列から変数にいれると値をコピーしている
+// foreachで取り出した変数をいじっても配列の値は変化しない
+// 変化させるには&をつけることで変化させることができる
+$pricelist = array(80,100,120);
+foreach($pricelist as &$value){
+    $value *= 1.05;
+}
+// $value に値が入りっぱなしなので明示的に削除するらしい
+unset($value);
+
+// unset() は、指定した変数を破棄します。
+// 関数内部での unset() の挙動は、破壊しようとしている変数の種類によって異なります。
+// グローバル化された変数を関数内部で unset() した場合は、 ローカル変数のみが破壊されます。呼び出した側の環境では、unset() が呼ばれる前と同じ値が保持されます。
+
+// 配列
+$result[0] = 1;
+$result[1] = 2;
+$result[2] = 3;
+
+// 配列のキーって変数にできる？→できる
+for($i=0;$i<10;$i++){
+    $result[$i] = $i;
+}
+
+// print_r(); //配列を展開して表示してくれる
+print_r($result);
+
+// 配列の中身は文字も数字も入る
+$vararray[0] = 14;
+$vararray[2] = 'Tokyo';
+$vararray[-4] = 8400;
+
+$vararray['8'] = 8;  // この場合数字の8がkeyになる
+$vararray['08'] = 8;  // この場合文字列の08がkeyになる
+
+$key = 'peach';
+$vararray["price_$key"] = 120; // price_peach のkey
+
+define("INDEX_KEY",8);
+$vararray[INDEX_KEY] = 120;
+
+// キーを数値で0から自動でつけてくれる
+$autoIndex[] = 1;
+$autoIndex[] = 2;
+$autoIndex[] = 3;
+
+echo "<br>";
+
+print_r($autoIndex);
+
+// キーの自動採番は数値で一番大きい値からつける
+$autoIndex[-4] = 1;
+$autoIndex[7] = 2;
+$autoIndex[] = 3;   // ←key 8
+
+echo "<br>";
+
+print_r($autoIndex);
+
+// 配列の初期化(array)
+// $arrayName = array('' => , );
+
+$arrayA = array();
+$arrayB = array('key1'=> 0 , 'key2'=> 1, 'key3'=> 3);
 
 
 ?>
