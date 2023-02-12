@@ -355,6 +355,14 @@ print_r($autoIndex);
 $arrayA = array();
 $arrayB = array('key1'=> 0 , 'key2'=> 1, 'key3'=> 3);
 
+// 多次元配列
+$maker = array('富士通', 'NEC', 'Sony', 'Sharp');
+$type = array('Note', 'Desktop');
+
+$pc = array($maker, $type);
+
+print $pc[0][1];    // NEC と出力
+print $pc[1][0];    // Note と出力
 
 ?>
 
