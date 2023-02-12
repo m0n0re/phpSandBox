@@ -395,6 +395,50 @@ function hello(){
   print 'hello';
 }
 
+// class
+class MyClass{
+
+}
+
+$mCl = new MyClass();
+
+class TV{
+    // アクセス修飾子
+    public $chNo;   // クラス外からアクセスできる
+    private $chNoB; // クラス内のみアクセスできる
+    protected $chNoC;   // クラス内と子クラスからアクセスできる
+
+    function dispChannel(){
+        echo "now channnel:".$this->chNo;
+    }
+
+    // 関数にもアクセス修飾子指定できる(未指定の場合はpublic)
+
+    public function helloA(){
+    }
+
+    protected function helloB(){
+
+    }
+
+    private function helloC(){
+        
+    }
+
+
+}
+
+$myTv = new TV();
+
+// TVクラスが持ってるメンバchNoにアクセスするには クラス名->メンバプロパティ
+$myTv->chNo=8;
+
+// TVクラスの関数を呼ぶにはクラス名->関数名で呼べる
+$myTv->dispChannel();
+
+//$myTv -> chNoB = 10; アクセスできないのでエラー
+// $myTv -> chNoC = 11; アクセスできないのでエラー
+
 
 ?>
 
