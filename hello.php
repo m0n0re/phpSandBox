@@ -403,13 +403,25 @@ class MyClass{
 $mCl = new MyClass();
 
 class TV{
+    // クラス内の定数定義には const　を使う
+    // 呼び出すときは self::変数名と書く。 self::は”クラスそのもの”を指す。
+    // $this はオブジェクトごと、self:: はクラス単位
+    const MAX_CHNO = 12;
+    const MIN_CHNO = 1;
+
     // アクセス修飾子
     public $chNo;   // クラス外からアクセスできる
     private $chNoB; // クラス内のみアクセスできる
     protected $chNoC;   // クラス内と子クラスからアクセスできる
 
+    // classのコンストラクタは __construct と定義する。
+    // 引数を複数用意して複数のコンストラクタの定義はできない
+    function __construct($channel){
+
+    }
+
     function dispChannel(){
-        echo "now channnel:".$this->chNo;
+        echo "now channnel:".$this->chNo."<br>";
     }
 
     // 関数にもアクセス修飾子指定できる(未指定の場合はpublic)
@@ -425,7 +437,13 @@ class TV{
         
     }
 
-
+    function setChannel($ch){
+        if($ch > self::MAX_CHNO){
+            print("値".$ch."はセットできません");
+        }
+        $this->chNo = $ch;
+        $this->dispChannel();
+    }
 }
 
 $myTv = new TV();
@@ -438,6 +456,7 @@ $myTv->dispChannel();
 
 //$myTv -> chNoB = 10; アクセスできないのでエラー
 // $myTv -> chNoC = 11; アクセスできないのでエラー
+$myTv->setChannel(111)
 
 
 ?>
